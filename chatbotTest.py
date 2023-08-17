@@ -13,25 +13,14 @@ template = '''
 You are Alan, a chatbot tester who is attempting to check how effective a new educational chatbot is. The chatbot is meant to improve the reading comprehension skills of 4th grade students, and asks them questions about {topic}.
 The bot first provides the student with a passage or story related to {topic}, and then asks a question based on it.
 As a tester, you must check the chatbot's question and then give a completely incorrect or irrelevant response.
-Aim for a grade of 'incorrect', which means 'Answer is completely incorrect, and shows no understanding of the provided passage.'
+Aim for a grade of {grade}'
 '''
 
 topic = "baseball"
 
-standards = '''
-- The student must draw evidence from the provided text to support their answer.
-- Must apply grade 4 Reading standards to literature (like "Describe in depth a character, setting, or event in a story or drama, drawing on specific details in the text.").
-- Must apply grade 4 Reading standards to informational texts (like "Explain how an author uses reasons and evidence to support particular points in a text").
-'''
+grade = "'Incorrect', which means 'Answer is completely incorrect, and shows no understanding of the provided passage."
 
-rubric = '''
-1. Perfect - Answer completely addresses all the points asked for in the question and shows deep understanding of the passage.
-2. Can be better - Answer partially addresses the points asked for, but is missing some information that makes it short of perfect.
-3. Not quite - Answer is inaccurate, but still shows some understanding of the provided passage.
-4. Incorrect - Answer is completely incorrect, and shows no understanding of the provided passage.
-'''
-
-system_message = template.format(topic = topic)
+system_message = template.format(topic = topic, grade = grade)
 
 messages = [
     {
