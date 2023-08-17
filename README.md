@@ -18,3 +18,7 @@ The chatbotTest.py file is an automated test for the main chatbot.py file. It ha
 - Selenium is used to first start the conversation with the Main Bot, and then it retrieves the response (the question in this case) and feeds it to the Test Bot.
 - The Test Bot then generates an answer to the question as per the system message (can be configured to give good or bad answers), and Selenium is once again used to submit that answer to Main Bot.
 - Depending on the answer of the Main Bot, we can decide if the Main Bot's assessment was accurate or not (if it matches the settings given within the Test Bot's system message).
+
+Design:
+
+![System Design](https://github.com/GovindKRajesh/Educational_Chatbot/blob/main/Images/System%20Design.png)
